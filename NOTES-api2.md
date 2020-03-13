@@ -86,3 +86,18 @@
 		- **HATEOAS** (**H**yepermedia **A**s **T**he **E**ngine **O**f **A**pplication **S**tate). Much like a choose your own adventure book, the pages are not read in order. You start at page 1, and based on the information available, the reader (client) chooses the action to take, moving them to a different page. A good example of a hypermedia API is the [GitHub API](https://api.github.com/).
 
 # Server-Side Routing with Express
+	* **vertical scaling** is a faster processor and more memory. 
+	* **Horizontal scaling** is adding another server. 
+	* REST is state is held on the clients computer. Each request sends information about the local state. 
+
+### Caching
+	* ETag in network tab headers is used to verify the state of the sever compared to local. 
+
+### Routing
+### Query String
+	* is everything after the ? in the url...
+	* query's have key value pairs. 
+	* query object is designated in the hubs-model.js file. 
+	* req.query object manifests in the url
+
+### Subroutes
