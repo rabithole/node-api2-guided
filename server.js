@@ -6,7 +6,7 @@ const server = express();
 
 server.use(express.json()); // express middleware
 server.use('/api/hubs', hubsRouter);
-server.use('/junk', hubsRouter);
+// server.use('/junk', hubsRouter);
 
 // endpoints
 

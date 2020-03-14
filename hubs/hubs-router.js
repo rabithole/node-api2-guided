@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
     if (hub) {
       res.status(200).json(hub);
     } else {
-      res.status(404).json({ message: 'Hub not found' });
+      res.status(404).json({ message: 'The damn hub is not here' });
     }
   })
   .catch(error => {
