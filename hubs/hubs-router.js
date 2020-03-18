@@ -88,4 +88,27 @@ router.put('/:id', (req, res) => {
   });
 });
 
+router.get('/:id/messages', (req, res) => {
+  console.log(req.params)
+  Hubs.findHubMessages(req.params.id)
+  .then(messages => {
+    if (messages.length > 0) {
+      res.status(200).json(messages);
+    } else {
+      res.status(404).json({ message: 'The damn messages is not here' });
+    }
+  })
+  .catch(error => {
+    // log error to database
+    console.log(error);
+    res.status(500).json({
+      message: 'Error retrieving the messages',
+    });
+  });
+});
+
+router.post('/:id/messages', (req, res) => {
+
+})
+
 module.exports = router;
