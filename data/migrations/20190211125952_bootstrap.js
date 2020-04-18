@@ -4,20 +4,17 @@ exports.up = function(knex) {
       tbl.increments();
       tbl.string('name').notNullable();
       tbl.timestamps(true, true);
-
       tbl.unique('name');
     })
     .createTable('messages', tbl => {
       tbl.increments();
-      tbl
-        .string('sender')
+      tbl.string('sender')
         .notNullable()
         .index();
       tbl.text('text').notNullable();
       tbl.timestamps(true, true);
 
-      tbl
-        .integer('hub_id')
+      tbl.integer('hub_id')
         .unsigned()
         .references('id')
         .inTable('hubs')
@@ -27,5 +24,7 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('messages').dropTableIfExists('hubs');
+  return knex.schema
+    .dropTableIfExists('messages')
+    .dropTableIfExists('hubs');
 };

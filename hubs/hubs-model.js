@@ -50,9 +50,9 @@ function update(id, changes) {
 }
 
 function findHubMessages(hubId) {
-  return db('messages as m')
-    .join('hubs as h', 'm.hub_id', 'h.id')
-    .select('m.id', 'm.text', 'm.sender', 'h.id as hubId', 'h.name as hub')
+  return db('messages')
+    .join('hubs', 'messages.hub_id', 'hubs.id')
+    .select('messages.id', 'messages.text', 'messages.sender', 'hubs.id as hubId', 'hubs.name as hub')
     .where({ hub_id: hubId });
 }
 
